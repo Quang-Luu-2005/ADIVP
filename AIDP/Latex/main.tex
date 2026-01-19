@@ -1,0 +1,80 @@
+% Compile with XeLaTeX for best Vietnamese support.
+% Example: xelatex main.tex
+
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{booktabs}
+
+% XeLaTeX font setup (Windows-friendly)
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Consolas}
+
+\hypersetup{unicode=true, colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue}
+
+% Theorem environments (used by week files)
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+% -----------------------------
+% Report metadata (edit these)
+% -----------------------------
+\newcommand{\UniversityName}{ĐẠI HỌC QUỐC GIA TP. HỒ CHÍ MINH}
+\newcommand{\SchoolName}{TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN}
+
+\newcommand{\CourseName}{Ứng dụng xử lý ảnh số và video số - 23TGMT}
+\newcommand{\LecturerName}{Lý Quốc Ngọc - Nguyễn Mạnh Hùng - Phạm Thanh Tùng}
+
+% Put each student on its own line using \\ inside this command.
+\newcommand{\StudentList}{%
+Lưu Huy Minh Quang - 23127016\\
+Trương Quốc Cường - 23127333%
+}
+
+\newcommand{\ReportTitle}{BÀI TẬP LỚP NHÀ}
+\newcommand{\ReportSubtitle}{Ghi chú / Nội dung học tập}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+
+{\Large \UniversityName\par}
+\vspace{0.25cm}
+{\Large \SchoolName\par}
+
+\vfill
+
+{\LARGE\bfseries \ReportTitle\par}
+\vspace{0.2cm}
+{\Large \ReportSubtitle\par}
+
+\vfill
+
+\begin{tabular}{@{}ll@{}}
+\textbf{Môn học:} & \CourseName\\
+\textbf{Giảng viên:} & \LecturerName\\
+\textbf{Sinh viên:} & \begin{tabular}[t]{@{}l@{}}\StudentList\end{tabular}\\
+\end{tabular}
+
+\vfill
+
+{\large \today\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+
+\input{week/week01.tex}
+
+\end{document}
