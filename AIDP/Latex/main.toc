@@ -2,3 +2,7 @@
 \contentsline {paragraph}{So sánh giữa các hướng nghiên cứu}{2}{section*.5}%
 \contentsline {paragraph}{Yêu cầu của từng hướng nghiên cứu}{3}{section*.6}%
 \contentsline {paragraph}{Hướng nào đang được đầu tư nhiều nhất hiện nay?}{4}{section*.7}%
+\contentsline {paragraph}{Bài toán đặt ra.}{4}{section*.9}%
+\contentsline {paragraph}{Vì sao đây là nghiên cứu cơ bản?}{4}{section*.10}%
+\contentsline {paragraph}{Đóng góp nền tảng: khung tối ưu hoá/variational.}{5}{section*.11}%
+\contentsline {paragraph}{Vì sao ví dụ này đúng nghĩa ``nghiên cứu cơ bản''?}{5}{section*.12}%

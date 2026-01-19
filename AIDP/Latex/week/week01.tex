@@ -140,14 +140,74 @@ Mô hình tốt nhưng không chạy kịp/khó vận hành/chi phí cao \\
   ngân sách lớn nhất trong doanh nghiệp thường nằm ở \textbf{hạ tầng + triển khai + sản phẩm} (tức ``phát triển'', rồi đến ``ứng dụng'').
 \end{itemize}
 
-
-
 \subsection*{2. Cho ví dụ ứng dụng về nghiên cứu cơ bản trong khoa học thị giác}
 
-\subsection*{3. Phân biệt các hướng nghiên cứu cơ bản, ứng dụng và phát triển}
+\paragraph{Bài toán đặt ra.}
+Cho hai khung hình liên tiếp $I(x,y,t)$ và $I(x,y,t+\Delta t)$. Mục tiêu là ước lượng \textbf{vector chuyển động tại mỗi điểm ảnh}
+\[
+\mathbf{w}(x,y) = (u(x,y), v(x,y)),
+\]
+để mô tả mỗi pixel ``dịch chuyển đi đâu'' từ frame này sang frame kế tiếp. Đây là câu hỏi nền tảng vì \textbf{chuyển động} là khái niệm cốt lõi của video; nhiều bài toán như tracking, ổn định video, nội suy frame, nén video, tái tạo 3D, robot thị giác,\ldots đều cần ước lượng chuyển động.
 
-\subsection*{4. Cho ví dụ nhận dạng mẫu sản phẩm và truy vấn mẫu sản phẩm}
+\paragraph{Vì sao đây là nghiên cứu cơ bản?}
+Điểm mấu chốt là Horn--Schunck không nhắm vào một ứng dụng cụ thể (ví dụ theo dõi xe hay chẩn đoán y tế), mà \textbf{xây dựng một mô hình tổng quát} và một \textbf{khung toán học} để suy ra chuyển động từ dữ liệu ảnh.
 
-\subsection*{5. Nêu ứng dụng cụ thể dùng mô hình học: Supervised Learning, Unsupervised Learning, Reinforcement Learning}
+\begin{itemize}
+  \item \textbf{(1) Giả thiết bảo toàn độ sáng (brightness constancy).}
+  Giả sử độ sáng của một điểm trong cảnh gần như không đổi khi nó di chuyển:
+  \[
+  I(x,y,t)\approx I(x+u,\,y+v,\,t+\Delta t).
+  \]
+  Khai triển Taylor bậc nhất thu được ràng buộc tuyến tính:
+  \[
+  I_x u + I_y v + I_t = 0.
+  \]
+  Tuy nhiên, ràng buộc này là \textbf{không đủ} để xác định $(u,v)$ tại từng pixel (1 phương trình, 2 ẩn), thường được gọi là \textbf{aperture problem}.
 
-\subsection*{6. Nếu áp dụng meta learning cho Image Classification thì có gì hơn so với Supervised Learning, Objective Detection?}
+  \item \textbf{(2) Tiên nghiệm trơn (smoothness prior).}
+  Đặt giả thiết trường chuyển động biến thiên ``mượt'' theo không gian, tức là
+  \[
+  |\nabla u|^2 + |\nabla v|^2 \ \text{nhỏ},
+  \]
+  nghĩa là các pixel lân cận thường có chuyển động tương tự nhau (trừ các biên chuyển động).
+\end{itemize}
+
+\paragraph{Đóng góp nền tảng: khung tối ưu hoá/variational.}
+Horn--Schunck kết hợp hai nguyên lý trên thành một bài toán tối ưu hoá chung:
+\[
+E(u,v) \;=\;
+\iint
+\underbrace{(I_x u + I_y v + I_t)^2}_{\text{khớp dữ liệu (data term)}}
+\;+\;
+\alpha^2\underbrace{\left(|\nabla u|^2 + |\nabla v|^2\right)}_{\text{làm trơn (regularization)}}
+\;dx\,dy.
+\]
+Trong đó:
+\begin{itemize}
+  \item \textbf{Data term} ép nghiệm phù hợp với giả thiết bảo toàn độ sáng.
+  \item \textbf{Regularization} làm bài toán ``đủ điều kiện'' và tăng tính ổn định trước nhiễu/thiếu thông tin.
+  \item $\alpha$ điều chỉnh trade-off giữa ``bám dữ liệu'' và ``mượt''.
+\end{itemize}
+
+Một dạng cập nhật lặp thường gặp khi giải bài toán trên là:
+\[
+u^{k+1}=\bar{u}^{k}-\frac{I_x\left(I_x\bar{u}^{k}+I_y\bar{v}^{k}+I_t\right)}{\alpha^2+I_x^2+I_y^2},
+\qquad
+v^{k+1}=\bar{v}^{k}-\frac{I_y\left(I_x\bar{u}^{k}+I_y\bar{v}^{k}+I_t\right)}{\alpha^2+I_x^2+I_y^2},
+\]
+trong đó $(\bar{u}^{k},\bar{v}^{k})$ là trung bình lân cận (thể hiện giả thiết trơn).
+
+\paragraph{Vì sao ví dụ này đúng nghĩa ``nghiên cứu cơ bản''?}
+\begin{itemize}
+  \item \textbf{Khung bài toán tổng quát:} không phụ thuộc camera/đối tượng/domain cụ thể; chỉ cần video là áp dụng được.
+  \item \textbf{Mô hình + tiên nghiệm rõ ràng:} nêu giả thiết, chỉ ra điều kiện đúng/sai (ví dụ brightness constancy dễ sai khi đổi sáng mạnh, phản xạ, motion blur,\ldots).
+  \item \textbf{Giải tính không xác định bằng regularization:} tư duy nền tảng cho nhiều bài toán thị giác khác (denoise, deblur, stereo, super-resolution,\ldots).
+  \item \textbf{Đặt nền cho nghiên cứu sau này:} nhiều phương pháp optical flow hiện đại (kể cả deep learning) vẫn xoay quanh cấu trúc ``data term + regularization'', khác nhau chủ yếu ở cách mô hình hoá và cách tối ưu.
+  \item \textbf{Giá trị khoa học độc lập sản phẩm:} dù dùng cho tracking hay nén video, đóng góp chính vẫn là \emph{khung lý thuyết} và \emph{phương pháp suy luận}.
+\end{itemize}
+
+\subsection*{3. Cho ví dụ nhận dạng mẫu sản phẩm và truy vấn mẫu sản phẩm}
+
+\subsection*{4. Nêu ứng dụng cụ thể dùng mô hình học: Supervised Learning, Unsupervised Learning, Reinforcement Learning}
+
+\subsection*{5. Nếu áp dụng meta learning cho Image Classification thì có gì hơn so với Supervised Learning, Objective Detection?}
