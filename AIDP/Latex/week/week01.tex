@@ -2,6 +2,146 @@
 
 \subsection*{1. Phân biệt các hướng nghiên cứu cơ bản, ứng dụng và phát triển}
 
+Trong \textbf{xử lý ảnh \& video số (Digital Image/Video Processing)}, ba hướng \textbf{cơ bản -- ứng dụng -- phát triển}
+có thể hiểu theo lộ trình: \emph{nền tảng lý thuyết} $\rightarrow$ \emph{giải bài toán cụ thể} $\rightarrow$
+\emph{triển khai thành hệ thống/sản phẩm chạy ổn định}.
+
+\begin{itemize}
+  \item \textbf{(i) Nghiên cứu cơ bản (fundamental/basic).}
+  \begin{itemize}
+    \item \textbf{Mục tiêu:} xây nền tảng lý thuyết và thuật toán, trả lời ``vì sao'' và ``giới hạn''.
+    \item \textbf{Nội dung:} mô hình hoá ảnh/video (nhiễu, mờ, nén, chuyển động), lý thuyết tín hiệu (Fourier/DCT/wavelet),
+    tối ưu hoá và bài toán ngược (MAP/ML, regularization), đánh giá chất lượng (PSNR/SSIM/VMAF, tri giác).
+    \item \textbf{Đầu ra kỳ vọng:} mô hình/thuật toán mới kèm phân tích (độ đúng, độ ổn định, độ phức tạp), thí nghiệm khoa học
+    (ablation, so sánh công bằng, phân tích lỗi).
+  \end{itemize}
+
+  \item \textbf{(ii) Nghiên cứu ứng dụng (applied/application-driven).}
+  \begin{itemize}
+    \item \textbf{Mục tiêu:} giải quyết bài toán thực tế trong một lĩnh vực cụ thể, trả lời ``làm để dùng được''.
+    \item \textbf{Nội dung:} phát hiện/nhận dạng/phân đoạn/theo dõi, tăng cường chất lượng ảnh/video, v.v.\ cho các domain như
+    y tế (MRI/CT), giám sát an ninh (CCTV), giao thông/xe tự hành, công nghiệp kiểm lỗi, media/phục chế video, viễn thám.
+    \item \textbf{Đặc trưng:} dữ liệu thực thường nhiễu và lệch miền (domain shift), thiếu nhãn; KPI theo use-case (mAP/F1, latency,
+    robustness); ràng buộc vận hành (thời gian thực, chi phí, quyền riêng tư).
+  \end{itemize}
+
+  \item \textbf{(iii) Nghiên cứu phát triển (development/engineering/productization).}
+  \begin{itemize}
+    \item \textbf{Mục tiêu:} đưa mô hình/thuật toán thành hệ thống triển khai ổn định, tối ưu tốc độ và chi phí.
+    \item \textbf{Nội dung:} tối ưu suy luận (quantization, pruning, distillation, TensorRT/ONNX), thiết kế pipeline
+    (thu thập $\rightarrow$ gán nhãn $\rightarrow$ huấn luyện $\rightarrow$ kiểm thử $\rightarrow$ triển khai $\rightarrow$ giám sát),
+    MLOps/DevOps (versioning, CI/CD, monitoring drift, rollback), tích hợp chuẩn/codec và streaming (H.264/H.265/AV1),
+    đảm bảo chất lượng thực tế (robust với ánh sáng/rung/che khuất).
+    \item \textbf{Đầu ra kỳ vọng:} prototype/SDK/API hoặc hệ thống realtime với chỉ tiêu rõ (FPS/latency, bộ nhớ, uptime, chi phí).
+  \end{itemize}
+\end{itemize}
+
+
+\paragraph{Phân biệt các hướng nghiên cứu}
+\begin{itemize}
+  \item \textbf{Cơ bản:} tạo \emph{kiến thức/thuật toán nền}.
+  \item \textbf{Ứng dụng:} dùng kiến thức đó để \emph{giải bài toán ngành cụ thể}.
+  \item \textbf{Phát triển:} biến lời giải thành \emph{hệ thống/sản phẩm chạy ổn, nhanh, rẻ}.
+\end{itemize}
+
+\paragraph{So sánh giữa các hướng nghiên cứu}
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{3.0cm} p{4.2cm} p{4.2cm} p{4.2cm}}
+\hline
+\textbf{Tiêu chí} & \textbf{Cơ bản} & \textbf{Ứng dụng} & \textbf{Phát triển} \\
+\hline
+Câu hỏi chính &
+``Vì sao / giới hạn / mô hình hoá thế nào?'' &
+``Giải bài toán $X$ trong domain $Y$ ra sao?'' &
+``Chạy ổn -- nhanh -- rẻ -- dễ vận hành thế nào?'' \\
+\hline
+Đóng góp kỳ vọng &
+Thuật toán/mô hình mới + phân tích (độ đúng, ổn định, độ phức tạp) &
+Pipeline + cải thiện KPI cho bài toán thực (mAP, F1, WER, VMAF, \ldots) &
+Hệ thống/SDK/production pipeline + SLO (latency, FPS, uptime, cost) \\
+\hline
+Dữ liệu &
+Thường sạch/chuẩn hoá; có thể dùng dữ liệu tổng hợp (synthetic) để kiểm soát biến &
+Dữ liệu theo ngành (y tế, giám sát, \ldots), nhiều nhiễu và lệch miền (domain shift) &
+Dữ liệu production + logging; theo dõi drift; ràng buộc quyền riêng tư \\
+\hline
+Đánh giá &
+Benchmark + ablation + phân tích lỗi mang tính ``giải thích'' &
+KPI theo use-case + độ bền (robustness) + so với baseline thực tế &
+Chỉ tiêu hệ thống: FPS/latency, chi phí, ổn định, khả năng mở rộng \\
+\hline
+Tài nguyên &
+Vừa phải $\rightarrow$ nặng (đặc biệt khi huấn luyện mô hình lớn) &
+Nặng ở dữ liệu/nhãn và thử nghiệm nhiều điều kiện &
+Nặng ở engineering: tối ưu GPU/edge, CI/CD, monitoring \\
+\hline
+Kỹ năng chủ đạo &
+Toán/tín hiệu/tối ưu; thiết kế thí nghiệm chặt &
+Hiểu domain + ML/CV + xử lý dữ liệu &
+Software/hardware + MLOps + tối ưu hoá và QA \\
+\hline
+Rủi ro thường gặp &
+Ý tưởng hay nhưng khó vượt SOTA/khó thuyết phục &
+Chạy tốt trên test nhưng fail ngoài đời (domain shift) &
+Mô hình tốt nhưng không chạy kịp/khó vận hành/chi phí cao \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{Yêu cầu của từng hướng nghiên cứu}
+
+\begin{itemize}
+  \item \textbf{(A) Cơ bản:}
+  \begin{itemize}
+    \item Định nghĩa bài toán rõ (noise model, blur model, motion model, \ldots).
+    \item Chứng minh/giải thích: vì sao thuật toán hợp lý, trade-off gì, giới hạn gì.
+    \item Thí nghiệm ``khoa học'': ablation, sensitivity, phân tích lỗi, so sánh công bằng.
+  \end{itemize}
+
+  \item \textbf{(B) Ứng dụng:}
+  \begin{itemize}
+    \item Use-case và ràng buộc thật (điều kiện ánh sáng, camera, thiếu nhãn, \ldots).
+    \item Quy trình dữ liệu: thu thập -- gán nhãn -- chia tập -- chống leakage.
+    \item Đánh giá theo KPI đúng nhu cầu (không chỉ PSNR/SSIM; cần tiêu chí nghiệp vụ).
+  \end{itemize}
+
+  \item \textbf{(C) Phát triển:}
+  \begin{itemize}
+    \item Spec hệ thống (FPS/latency, bộ nhớ, throughput, chi phí/1k video, SLA/SLO, \ldots).
+    \item Tối ưu triển khai: quantization/pruning, TensorRT/ONNX, batching, streaming pipeline.
+    \item Vận hành: versioning dữ liệu/mô hình, giám sát drift, rollback, bảo mật và privacy.
+  \end{itemize}
+\end{itemize}
+
+\paragraph{Hướng nào đang được đầu tư nhiều nhất hiện nay?}
+\begin{itemize}
+  \item Nếu xét theo \textbf{dòng tiền của doanh nghiệp/thị trường}, phần \textbf{được rót nhiều nhất} thường là
+  \textbf{``Ứng dụng + Phát triển (production hoá)''}---đặc biệt các bài toán \emph{vision AI} gắn với
+  sản xuất/giám sát/y tế/giao thông--xe, và triển khai theo mô hình \textbf{edge-to-cloud}.
+
+  \item \textbf{Lý do chính:}
+  \begin{itemize}
+    \item \textbf{Nhu cầu thị trường tăng mạnh:} nhiều báo cáo dự báo thị trường computer vision tăng nhanh giai đoạn 2025--2030
+    (ví dụ các báo cáo thị trường như Grand View Research).
+    \item \textbf{Chi tiêu doanh nghiệp dồn vào hạ tầng \& triển khai:} đầu tư cho data center, thiết bị và hạ tầng AI tăng,
+    khiến phần ``phát triển/production hoá'' (tối ưu triển khai, vận hành hệ thống) chiếm tỷ trọng ngân sách lớn
+    (ví dụ các dự báo chi tiêu CNTT như Gartner).
+    \item \textbf{Xu hướng kỹ thuật:} cộng đồng và doanh nghiệp đẩy mạnh hướng \emph{generative + multimodal/foundation models}
+    cho thị giác (ảnh/video), kéo theo nhu cầu xây pipeline, công cụ triển khai, tối ưu suy luận (ví dụ các tổng kết nghiên cứu
+    tại ICCV 2025 từ Sony AI/Sony).
+    \item \textbf{Thực tế triển khai enterprise vision AI:} các báo cáo dựa trên dự án thực tế nhấn mạnh tốc độ đưa mô hình vào
+    production, lựa chọn phần cứng, yêu cầu dữ liệu và vận hành (ví dụ Roboflow Vision AI Trends).
+  \end{itemize}
+
+  \item \textbf{Tuy vậy,} \textbf{nghiên cứu cơ bản} không ``hết tiền'': các nhóm/lab lớn vẫn đầu tư đáng kể vào
+  \textbf{foundation models / generative models} (nền tảng tạo lợi thế dài hạn về thuật toán và dữ liệu), nhưng xét tổng thể,
+  ngân sách lớn nhất trong doanh nghiệp thường nằm ở \textbf{hạ tầng + triển khai + sản phẩm} (tức ``phát triển'', rồi đến ``ứng dụng'').
+\end{itemize}
+
+
+
 \subsection*{2. Cho ví dụ ứng dụng về nghiên cứu cơ bản trong khoa học thị giác}
 
 \subsection*{3. Phân biệt các hướng nghiên cứu cơ bản, ứng dụng và phát triển}
