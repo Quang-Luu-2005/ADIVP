@@ -1,0 +1,14 @@
+{
+  "samples": 0,
+  "threshold": 0.5499999999999999,
+  "accuracy": NaN,
+  "precision": NaN,
+  "recall": NaN,
+  "dice": NaN,
+  "iou": NaN,
+  "mean_sample_accuracy": NaN,
+  "mean_sample_precision": NaN,
+  "mean_sample_recall": NaN,
+  "mean_sample_dice": NaN,
+  "mean_sample_iou": NaN
+}

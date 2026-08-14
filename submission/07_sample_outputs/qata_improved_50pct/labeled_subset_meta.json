@@ -1,0 +1,20 @@
+{
+  "task_name": "QaTa-Covid19",
+  "model_name": "LViT",
+  "label_percent": 50.0,
+  "val_selection_source_cfg": "best_of_both",
+  "best_epoch": 68,
+  "best_model_source": "ema",
+  "best_checkpoint_path": "/kaggle/working/qata_lvit_runs/qata_lvit_best.pth",
+  "last_checkpoint_path": "/kaggle/working/qata_lvit_runs/last_checkpoint.pth",
+  "total_train_samples": 5716,
+  "labeled_train_samples": 2858,
+  "unlabeled_train_samples": 2858,
+  "pseudo_enabled": true,
+  "pseudo_confidence_threshold": 0.8,
+  "pseudo_loss_weight": 0.3,
+  "pseudo_warmup_epochs": 1,
+  "epi_beta": 0.01,
+  "seed": 42,
+  "created_at": "2026-04-08T17:17:47"
+}

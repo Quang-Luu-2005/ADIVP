@@ -1,0 +1,18 @@
+{
+  "samples": 9258,
+  "nonempty_masks": 9258,
+  "empty_masks": 0,
+  "median_mask_area_ratio": 0.10146285076530612,
+  "mean_mask_area_ratio": 0.1209682251161158,
+  "small_mask_ratio_lt_1pct": 0.037481097429250376,
+  "median_component_count": 2.0,
+  "split_counts": {
+    "Train": 5716,
+    "Test": 2113,
+    "Validation": 1429
+  },
+  "text_laterality_counts": {
+    "Bilateral": 7338,
+    "Unilateral": 1920
+  }
+}

@@ -1,0 +1,45 @@
+Run dir: /kaggle/working/qata_lvit_runs
+Created at: 2026-04-08T18:30:22
+label_percent=25.0
+pseudo_enabled=True
+epi_beta=0.01
+Epoch 061 loss=0.0528 sup_loss=0.0513 lv_loss=0.0015 dice=0.9333 iou=0.8788
+Epoch 062 loss=0.0505 sup_loss=0.0492 lv_loss=0.0013 dice=0.9378 iou=0.8855
+Epoch 063 loss=0.0454 sup_loss=0.0444 lv_loss=0.0011 dice=0.9448 iou=0.8980
+Epoch 064 loss=0.0433 sup_loss=0.0424 lv_loss=0.0009 dice=0.9471 iou=0.9019
+Epoch 065 loss=0.0411 sup_loss=0.0403 lv_loss=0.0008 dice=0.9513 iou=0.9091
+Epoch 066 loss=0.0414 sup_loss=0.0406 lv_loss=0.0008 dice=0.9501 iou=0.9077
+Epoch 067 loss=0.0385 sup_loss=0.0378 lv_loss=0.0007 dice=0.9528 iou=0.9118
+Epoch 068 loss=0.0368 sup_loss=0.0361 lv_loss=0.0007 dice=0.9565 iou=0.9185
+Epoch 069 loss=0.0358 sup_loss=0.0352 lv_loss=0.0006 dice=0.9587 iou=0.9219
+Epoch 070 loss=0.0349 sup_loss=0.0343 lv_loss=0.0005 dice=0.9576 iou=0.9199
+Epoch 071 loss=0.0342 sup_loss=0.0337 lv_loss=0.0005 dice=0.9600 iou=0.9245
+Epoch 072 loss=0.0333 sup_loss=0.0329 lv_loss=0.0005 dice=0.9608 iou=0.9257
+Epoch 073 loss=0.0325 sup_loss=0.0320 lv_loss=0.0005 dice=0.9620 iou=0.9279
+Epoch 074 loss=0.0319 sup_loss=0.0314 lv_loss=0.0005 dice=0.9636 iou=0.9309
+Epoch 075 loss=0.0317 sup_loss=0.0312 lv_loss=0.0005 dice=0.9623 iou=0.9284
+Epoch 076 loss=0.0307 sup_loss=0.0303 lv_loss=0.0004 dice=0.9627 iou=0.9299
+Epoch 077 loss=0.0301 sup_loss=0.0297 lv_loss=0.0004 dice=0.9647 iou=0.9331
+Epoch 078 loss=0.0297 sup_loss=0.0293 lv_loss=0.0004 dice=0.9664 iou=0.9356
+Epoch 079 loss=0.0296 sup_loss=0.0292 lv_loss=0.0004 dice=0.9669 iou=0.9367
+Epoch 080 loss=0.0295 sup_loss=0.0292 lv_loss=0.0004 dice=0.9660 iou=0.9356
+Epoch 081 loss=0.0286 sup_loss=0.0283 lv_loss=0.0003 dice=0.9671 iou=0.9374
+Epoch 082 loss=0.0279 sup_loss=0.0276 lv_loss=0.0003 dice=0.9666 iou=0.9363
+Epoch 083 loss=0.0277 sup_loss=0.0274 lv_loss=0.0003 dice=0.9673 iou=0.9379
+Epoch 084 loss=0.0273 sup_loss=0.0270 lv_loss=0.0003 dice=0.9668 iou=0.9368
+Epoch 085 loss=0.0271 sup_loss=0.0268 lv_loss=0.0003 dice=0.9651 iou=0.9339
+Epoch 086 loss=0.0270 sup_loss=0.0267 lv_loss=0.0003 dice=0.9687 iou=0.9399
+Epoch 087 loss=0.0266 sup_loss=0.0263 lv_loss=0.0003 dice=0.9686 iou=0.9398
+Epoch 088 loss=0.0265 sup_loss=0.0263 lv_loss=0.0003 dice=0.9683 iou=0.9393
+Epoch 089 loss=0.0262 sup_loss=0.0259 lv_loss=0.0002 dice=0.9699 iou=0.9421
+Epoch 090 loss=0.0257 sup_loss=0.0255 lv_loss=0.0003 dice=0.9707 iou=0.9438
+Epoch 091 loss=0.0259 sup_loss=0.0257 lv_loss=0.0003 dice=0.9685 iou=0.9399
+Epoch 092 loss=0.0256 sup_loss=0.0253 lv_loss=0.0002 dice=0.9708 iou=0.9438
+Epoch 093 loss=0.0254 sup_loss=0.0252 lv_loss=0.0002 dice=0.9711 iou=0.9444
+Epoch 094 loss=0.0253 sup_loss=0.0251 lv_loss=0.0002 dice=0.9689 iou=0.9404
+Epoch 095 loss=0.0253 sup_loss=0.0251 lv_loss=0.0002 dice=0.9706 iou=0.9436
+Epoch 096 loss=0.0252 sup_loss=0.0249 lv_loss=0.0002 dice=0.9716 iou=0.9453
+Epoch 097 loss=0.0253 sup_loss=0.0251 lv_loss=0.0002 dice=0.9721 iou=0.9462
+Epoch 098 loss=0.0252 sup_loss=0.0250 lv_loss=0.0002 dice=0.9700 iou=0.9425
+Epoch 099 loss=0.0251 sup_loss=0.0249 lv_loss=0.0002 dice=0.9707 iou=0.9437
+Epoch 100 loss=0.0251 sup_loss=0.0249 lv_loss=0.0002 dice=0.9707 iou=0.9435

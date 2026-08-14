@@ -1,0 +1,14 @@
+{
+  "samples": 1091,
+  "threshold": 0.35,
+  "accuracy": 0.9948323788440674,
+  "precision": 0.8924497007873304,
+  "recall": 0.7624977730891634,
+  "dice": 0.8223716102003663,
+  "iou": 0.6983286215953971,
+  "mean_sample_accuracy": 0.9948323788440768,
+  "mean_sample_precision": 0.880183651182007,
+  "mean_sample_recall": 0.6683020954312552,
+  "mean_sample_dice": 0.6971921834867905,
+  "mean_sample_iou": 0.5964982522533634
+}

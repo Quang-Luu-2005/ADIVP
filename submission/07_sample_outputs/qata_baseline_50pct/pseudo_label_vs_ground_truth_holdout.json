@@ -1,0 +1,25 @@
+[
+  {
+    "task": "QaTa-Covid19",
+    "run_name": "QaTa_Covid19_LViT_50pct_labels",
+    "train_subset_ratio": 0.5,
+    "total_train_samples": 5716,
+    "labeled_train_samples": 2858,
+    "pseudo_eval_holdout_samples": 2858,
+    "checkpoint": "/kaggle/working/LViT/QaTa-Covid19/LViT/QaTa_Covid19_LViT_50pct_labels/models/best_model-LViT.pt",
+    "pixel_accuracy": 0.9629548077541024,
+    "pixel_precision": 0.800558271379212,
+    "pixel_recall": 0.9249754906611517,
+    "pixel_dice": 0.858281415480653,
+    "pixel_iou": 0.7517451560464719,
+    "mean_sample_accuracy": 0.9629548077541754,
+    "mean_sample_precision": 0.7523419223189841,
+    "mean_sample_recall": 0.8907635900089256,
+    "mean_sample_dice": 0.7923462753459123,
+    "mean_sample_iou": 0.6878649591559199,
+    "tp_pixels": 16086554.0,
+    "fp_pixels": 4007616.0,
+    "fn_pixels": 1304776.0,
+    "tn_pixels": 122004062.0
+  }
+]

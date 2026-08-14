@@ -1,0 +1,22 @@
+{
+  "task_name": "MosMedData+",
+  "model_name": "LViT",
+  "label_percent": 50.0,
+  "apply_label_percent_to_eval": true,
+  "total_train_samples": 2183,
+  "labeled_train_samples": 1092,
+  "unlabeled_train_samples": 1091,
+  "total_val_samples": 273,
+  "eval_val_samples": 136,
+  "heldout_val_samples": 137,
+  "total_test_samples": 273,
+  "eval_test_samples": 136,
+  "heldout_test_samples": 137,
+  "pseudo_enabled": true,
+  "pseudo_confidence_threshold": 0.8,
+  "pseudo_loss_weight": 0.3,
+  "pseudo_warmup_epochs": 1,
+  "epi_beta": 0.01,
+  "seed": 42,
+  "created_at": "2026-04-12T15:59:10"
+}

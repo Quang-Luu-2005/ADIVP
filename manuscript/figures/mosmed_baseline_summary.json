@@ -1,0 +1,135 @@
+{
+  "scores": {
+    "25": [
+      {
+        "split": "train",
+        "samples": 546,
+        "loss": 0.0866862156,
+        "sup_loss": 0.0866862156,
+        "lv_loss": 0.0,
+        "dice": 0.8750995734,
+        "iou": 0.8087965538
+      },
+      {
+        "split": "val",
+        "samples": 68,
+        "loss": 0.2902713418,
+        "sup_loss": 0.2902713418,
+        "lv_loss": 0.0,
+        "dice": 0.5959084104,
+        "iou": 0.477882508
+      },
+      {
+        "split": "test",
+        "samples": 68,
+        "loss": 0.3051730342,
+        "sup_loss": 0.3051730342,
+        "lv_loss": 0.0,
+        "dice": 0.5676013652,
+        "iou": 0.4347855168
+      }
+    ],
+    "50": [
+      {
+        "split": "train",
+        "samples": 1092,
+        "loss": 0.1328025265,
+        "sup_loss": 0.1328025265,
+        "lv_loss": 0.0,
+        "dice": 0.7894145316,
+        "iou": 0.695889073
+      },
+      {
+        "split": "val",
+        "samples": 136,
+        "loss": 0.266664008,
+        "sup_loss": 0.266664008,
+        "lv_loss": 0.0,
+        "dice": 0.5635576459,
+        "iou": 0.4519470439
+      },
+      {
+        "split": "test",
+        "samples": 136,
+        "loss": 0.2430252222,
+        "sup_loss": 0.2430252222,
+        "lv_loss": 0.0,
+        "dice": 0.5901372889,
+        "iou": 0.4611286977
+      }
+    ],
+    "100": [
+      {
+        "split": "train",
+        "samples": 2183,
+        "loss": 0.0977438986,
+        "sup_loss": 0.0977438986,
+        "lv_loss": 0.0,
+        "dice": 0.8555113252,
+        "iou": 0.768859072
+      },
+      {
+        "split": "val",
+        "samples": 273,
+        "loss": 0.2736801324,
+        "sup_loss": 0.2736801324,
+        "lv_loss": 0.0,
+        "dice": 0.6443646401,
+        "iou": 0.5230671149
+      },
+      {
+        "split": "test",
+        "samples": 273,
+        "loss": 0.2481984737,
+        "sup_loss": 0.2481984737,
+        "lv_loss": 0.0,
+        "dice": 0.7097509798,
+        "iou": 0.5770728348
+      }
+    ]
+  },
+  "training": {
+    "25": {
+      "best_epoch": 100,
+      "best_val_dice": 58.474162746878235,
+      "best_val_iou": 46.70383018605849,
+      "final_epoch": 100,
+      "final_val_dice": 58.474162746878235,
+      "final_val_iou": 46.70383018605849
+    },
+    "50": {
+      "best_epoch": 100,
+      "best_val_dice": 54.85471241614398,
+      "best_val_iou": 43.85565098594217,
+      "final_epoch": 100,
+      "final_val_dice": 54.85471241614398,
+      "final_val_iou": 43.85565098594217
+    },
+    "100": {
+      "best_epoch": 74,
+      "best_val_dice": 64.12624811187332,
+      "best_val_iou": 51.96456872063242,
+      "final_epoch": 100,
+      "final_val_dice": 62.552386118378834,
+      "final_val_iou": 50.40804140624546
+    }
+  },
+  "pseudo_holdout": {
+    "25": {
+      "dice": 76.64518382340265,
+      "iou": 62.13392083019884,
+      "mean_sample_dice": 69.10475348731518,
+      "mean_sample_iou": 58.57959946024218,
+      "threshold": 0.35,
+      "samples": 1637
+    },
+    "50": {
+      "dice": 82.23716102003664,
+      "iou": 69.83286215953972,
+      "mean_sample_dice": 69.71921834867905,
+      "mean_sample_iou": 59.649825225336336,
+      "threshold": 0.35,
+      "samples": 1091
+    }
+  }
+}

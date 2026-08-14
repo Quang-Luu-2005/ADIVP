@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local datasets and experiment artifacts
+data/raw/
+data/processed/
+runs/
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.zip
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.code-workspace
+
+# Local coursework drafts kept outside the public project history
+/B3.docx
+/B4.docx
+/B5.docx

@@ -1,0 +1,127 @@
+\documentclass[a4paper,10pt]{report}
+
+\newcommand{\reporttitle}{BÁO CÁO ĐỒ ÁN: LViT TRONG PHÂN ĐOẠN ẢNH Y KHOA}
+\newcommand{\groupname}{FFT}
+\newcommand{\projecttopic}{3. Phân đoạn ảnh với dữ liệu nhãn hạn chế + text prompt}
+\newcommand{\coursename}{Ứng dụng xử lý ảnh và video số}
+\newcommand{\courseschedule}{Thứ 3 hằng tuần}
+\newcommand{\coursecode}{CSC16004}
+\newcommand{\classname}{23TGMT}
+\newcommand{\semester}{2}
+\newcommand{\academicyear}{2025--2026}
+\newcommand{\studentone}{Lưu Huy Minh Quang}
+\newcommand{\studentoneid}{23127016}
+\newcommand{\studentoneemail}{lhmquang232@clc.fitus.edu.vn}
+\newcommand{\studentonephone}{0971309547}
+\newcommand{\studentonemajor}{Thị giác máy tính}
+\newcommand{\studentoneinternship}{Chưa có}
+\newcommand{\studenttwo}{Trương Quốc Cường}
+\newcommand{\studenttwoid}{23127333}
+\newcommand{\studenttwoemail}{tqcuong23@clc.fitus.edu.vn}
+\newcommand{\studenttwophone}{0941851799}
+\newcommand{\studenttwomajor}{Khoa học máy tính}
+\newcommand{\studenttwointernship}{Chưa có}
+\newcommand{\advisorone}{PGS. TS. Lý Quốc Ngọc}
+\newcommand{\advisoroneDepartment}{Bộ môn Thị giác máy tính và Điều khiển học thông minh}
+\newcommand{\advisoroneFaculty}{Khoa Công nghệ Thông tin, Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM}
+\newcommand{\advisortwo}{ThS. Phạm Thanh Tùng}
+\newcommand{\advisorthree}{ThS. Nguyễn Mạnh Hùng}
+\newcommand{\reportplace}{Thành phố Hồ Chí Minh}
+\newcommand{\reportdate}{ngày 28 tháng 4 năm 2026}
+\newcommand{\repourl}{https://github.com/TQC0103/QaTaLViT}
+
+\usepackage[left=0.75in,right=0.75in,top=1in,bottom=1in]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta,shapes.geometric}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{xurl}
+\usepackage{microtype}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{textcomp}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[hidelinks]{hyperref}
+\usepackage[style=ieee,backend=biber,language=english]{biblatex}
+
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmonofont{Latin Modern Mono}
+
+\setmainlanguage{vietnamese}
+\setotherlanguage{english}
+\DeclareLanguageMapping{vietnamese}{english}
+
+\graphicspath{{figures/}{assets/}}
+\setstretch{1.15}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\emergencystretch=2em
+\hbadness=10000
+\vbadness=10000
+
+\addbibresource{references.bib}
+\AtBeginBibliography{\sloppy}
+
+\addto\captionsvietnamese{%
+  \renewcommand{\contentsname}{Mục lục}%
+  \renewcommand{\listfigurename}{Danh sách hình vẽ}%
+  \renewcommand{\listtablename}{Danh sách bảng}%
+  \renewcommand{\figurename}{Hình}%
+  \renewcommand{\tablename}{Bảng}%
+  \renewcommand{\chaptername}{Chương}%
+}
+\floatname{algorithm}{Thuật toán}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
+
+\BeforeBeginEnvironment{itemize}{\par}
+\setlist[itemize]{leftmargin=*,labelsep=0.5em}
+\setlist[itemize,2]{label=\textopenbullet}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\maybeincludegraphics}[2][0.92\textwidth]{%
+  \IfFileExists{#2}{%
+    \includegraphics[width=#1]{#2}%
+  }{%
+    \fbox{\parbox[c][0.22\textheight][c]{0.86\textwidth}{\centering Figure placeholder\\\texttt{#2}}}%
+  }%
+}
+
+\newcommand{\labfigure}[4][0.92\textwidth]{%
+  \begin{figure}[H]
+    \centering
+    \maybeincludegraphics[#1]{#2}
+    \caption{#3}
+    \label{#4}
+  \end{figure}
+}
+
+\begin{document}
+
+\include{cover}
+
+\fontsize{10pt}{12.5pt}\selectfont
+
+\include{preface}
+\include{info}
+\include{sections/content_main}
+
+\chapter*{Tài liệu tham khảo}
+\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
+\printbibliography[heading=none]
+
+\end{document}

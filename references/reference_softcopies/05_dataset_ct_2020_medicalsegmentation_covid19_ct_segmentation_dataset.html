@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>[5] COVID-19 CT Segmentation Dataset</title>
+</head>
+<body>
+  <h1>[5] COVID-19 CT Segmentation Dataset</h1>
+  <p><strong>Original source:</strong> <a href="https://medicalsegmentation.com/covid19/">https://medicalsegmentation.com/covid19/</a></p>
+  <p><strong>Note:</strong> This local softcopy was reconstructed from the accessible page content captured in the in-app browser because the shell environment could not resolve the domain directly at download time.</p>
+
+  <h2>COVID-19 CT segmentation dataset</h2>
+  <p>
+    This is a dataset of 100 axial CT images from more than 40 patients with COVID-19 that were converted
+    from openly accessible JPG images. The images were segmented by a radiologist using 3 labels:
+    ground-glass (mask value = 1), consolidation (= 2), and pleural effusion (= 3).
+  </p>
+  <p>
+    The page states that a 2D multilabel U-Net model was trained on the data and made available through MedSeg.
+  </p>
+
+  <h3>Download data listed on the page</h3>
+  <ul>
+    <li>Training images as <code>.nii.gz</code> (151.8 MB) – 100 slices</li>
+    <li>Training masks as <code>.nii.gz</code> (1.4 MB) – 100 masks</li>
+    <li>CSV file connecting slice number with SIRM case number</li>
+    <li>Test images as <code>.nii.gz</code> (14.2 MB) – 10 slices</li>
+    <li>Dataset on Figshare for citation and long-term storage</li>
+    <li>Lung masks contribution by Johannes Hofmanninger</li>
+  </ul>
+
+  <h3>Segmentation dataset nr. 2</h3>
+  <p>
+    The page also describes another segmented set of 9 axial volumetric CTs from Radiopaedia, including both
+    positive and negative slices. It lists downloadable image volumes, COVID-19 masks, Figshare storage, and lung masks.
+  </p>
+
+  <h3>Update 20th April</h3>
+  <p>
+    A new segmentation dataset of 20 CT scans (labels right lung, left lung, and infection) is available on Zenodo.
+  </p>
+
+  <h3>Usage note</h3>
+  <p>
+    The page says the segmentations may be used freely and that an acknowledgment/link is appreciated.
+  </p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "samples_with_text_and_mask": 9258,
+  "laterality_match_rate": 0.9567941240008642,
+  "vertical_match_rate": 0.6925901922661482,
+  "both_match_rate": 0.6616979909267661,
+  "text_laterality_counts": {
+    "Bilateral": 7357,
+    "Right": 964,
+    "Left": 934,
+    "Unknown": 3
+  },
+  "mask_laterality_counts": {
+    "Bilateral": 7056,
+    "Left": 1153,
+    "Right": 1049
+  },
+  "text_vertical_counts": {
+    "Diffuse": 5608,
+    "Lower": 3005,
+    "Middle": 508,
+    "Upper": 129,
+    "Unknown": 8
+  },
+  "mask_vertical_counts": {
+    "Diffuse": 4744,
+    "Middle": 4047,
+    "Lower": 337,
+    "Upper": 130
+  }
+}

@@ -1,0 +1,2 @@
+samples,threshold,accuracy,precision,recall,dice,iou,mean_sample_accuracy,mean_sample_precision,mean_sample_recall,mean_sample_dice,mean_sample_iou
+0,0.5499999999999999,,,,,,,,,,

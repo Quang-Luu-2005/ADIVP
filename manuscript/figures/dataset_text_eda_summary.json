@@ -1,0 +1,131 @@
+{
+  "qata": {
+    "n": 9258,
+    "laterality": {
+      "Bilateral": 7338,
+      "Unilateral": 1920
+    },
+    "area_count": {
+      "1": 1859,
+      "2": 6862,
+      "3": 459,
+      "4": 66,
+      "5": 6,
+      "6": 1
+    },
+    "left_regions": {
+      "all": 3457,
+      "lower": 3714,
+      "upper": 852,
+      "middle": 1594
+    },
+    "right_regions": {
+      "middle": 1321,
+      "lower": 4515,
+      "all": 3040,
+      "upper": 708
+    },
+    "top_left_combos": {
+      "all": 3453,
+      "lower": 2575,
+      "none": 1151,
+      "middle+lower": 700,
+      "middle": 523,
+      "upper": 247,
+      "upper+lower": 234,
+      "upper+middle+lower": 201
+    },
+    "top_right_combos": {
+      "lower": 3509,
+      "all": 3036,
+      "none": 1004,
+      "middle+lower": 584,
+      "middle": 413,
+      "upper+lower": 239,
+      "upper+middle+lower": 179,
+      "upper": 145
+    }
+  },
+  "mosmed": {
+    "n": 2729,
+    "laterality": {
+      "Bilateral": 1342,
+      "Unilateral": 1340,
+      "Unknown": 47
+    },
+    "area_count": {
+      "1": 955,
+      "2": 536,
+      "3": 416,
+      "4": 295,
+      "5": 167,
+      "6": 114,
+      "7": 74,
+      "8": 48,
+      "9": 77
+    },
+    "left_regions": {
+      "all": 73,
+      "upper": 686,
+      "middle": 1373,
+      "lower": 93
+    },
+    "right_regions": {
+      "middle": 1262,
+      "upper": 381,
+      "all": 47,
+      "lower": 109
+    },
+    "top_left_combos": {
+      "middle": 1373,
+      "upper": 686,
+      "none": 504,
+      "lower": 93,
+      "all": 73
+    },
+    "top_right_combos": {
+      "middle": 1262,
+      "none": 930,
+      "upper": 381,
+      "lower": 109,
+      "all": 47
+    }
+  },
+  "mosmed_sources": {
+    "Train": {
+      "Bjørke / MedSeg CT": 80,
+      "Jun / Coronacases-Radiopaedia": 1475,
+      "Morozov / MosMedData": 628
+    },
+    "Val": {
+      "Bjørke / MedSeg CT": 10,
+      "Jun / Coronacases-Radiopaedia": 184,
+      "Morozov / MosMedData": 79
+    },
+    "Test": {
+      "Bjørke / MedSeg CT": 10,
+      "Jun / Coronacases-Radiopaedia": 185,
+      "Morozov / MosMedData": 78
+    }
+  },
+  "monuseg": {
+    "n": 44,
+    "density_type": {
+      "mật độ cao": 18,
+      "thưa": 13,
+      "đều": 10,
+      "khác": 3
+    },
+    "location": {
+      "toàn ảnh": 26,
+      "upper+right": 4,
+      "upper+left": 4,
+      "lower+right": 3,
+      "lower+left": 3,
+      "around": 1,
+      "lower": 1,
+      "left": 1,
+      "right": 1
+    }
+  }
+}
